@@ -9,6 +9,6 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 // POST /api/files/upload
-router.post("/upload", upload.single("file"), uploadFile);
+router.post("/upload", upload.single("File"), uploadFile);
 
 export default router;

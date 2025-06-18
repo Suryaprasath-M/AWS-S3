@@ -13,9 +13,14 @@ app.use(express.json());
 app.use('/api', userRouter);
 app.use('/api',fileRouter); // Serve static files from 'uploads' directory
 
-mongoose.connect('mongodb://localhost:27017/DemoAwsS3') // replace with yours
+//mongodb compass Access URI example:
+// mongodb://localhost:27017/DemoAwsS3
+
+// Connect to MongoDB atlas cluster
+mongoose.connect('mongodb+srv://DemoAws:DemoAwsS3@demo.gi9xibv.mongodb.net/?retryWrites=true&w=majority&appName=Demo')
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log("MongoDB error:", err));
+
 
 
 const port = process.env.PORT || 3000;
