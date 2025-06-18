@@ -10,6 +10,9 @@ const s3 = new S3Client({
     secretAccessKey: process.env.AWS_SECRET_ACCESS!,
   },
   region: process.env.AWS_REGION!,
+  endpoint: process.env.AWS_ENDPOINT, // Optional, if you are using a custom endpoint
+  forcePathStyle: true, // Use path-style URLs for S3
+  // This is useful for local S3-compatible services like MinIO
 
 });
 
