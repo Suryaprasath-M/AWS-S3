@@ -22,7 +22,7 @@ export const uploadFile = async (
 
     const savedFile = await FileModel.create({
       originalName: file.originalname,
-      s3Url: s3Result.Location,
+      s3Url: s3Result.signedUrl ,
     });
 
     res.status(200).json(savedFile);
@@ -31,4 +31,5 @@ export const uploadFile = async (
     res.status(500).json({ error: "Failed to upload file" });
   }
 };
+
 
